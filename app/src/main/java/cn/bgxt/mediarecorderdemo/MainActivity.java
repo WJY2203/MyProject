@@ -295,8 +295,9 @@ public class MainActivity extends Activity {
                 case 0x02:
                     strc=getRectstr(response,"[","]");    //得到返回语音内容
                     Log.d("return:",strc);
-                    TextView text_curtime = (TextView) this.findViewById(R.id.record_voice);
 
+                    TextView text = (TextView) findViewById(R.id.record_voice);
+                    text.setText(strc);
                     break;
                 default:
                     break;
@@ -308,4 +309,6 @@ public class MainActivity extends Activity {
         if (str.indexOf(strStart) < 0 || str.indexOf(strEnd) < 0) return "";
         return str.substring(str.indexOf(strStart) + strStart.length()+1, str.indexOf(strEnd)-2);
     }
+
+
 }
